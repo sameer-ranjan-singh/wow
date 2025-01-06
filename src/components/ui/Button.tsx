@@ -16,8 +16,7 @@ export interface ButtonProps {
 
 // Recommended : use maps or records over here
 const variantStyles: Record<Variants, string> = {
-  primary:
-    "bg-lime-500 text-white  hover:bg-white hover:text-lime-500 hover:border hover:border-lime-500",
+  primary: "bg-lime-500 text-white  hover:text-white hover:bg-lime-600 ",
   secondary: "bg-lime-100 text-lime-500 hover:bg-lime-200  ",
 };
 
