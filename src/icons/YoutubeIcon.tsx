@@ -2,8 +2,8 @@ export const YoutubeIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      enable-background="new 0 0 124 124"
-      viewBox="0 0 124 124"
+      enable-background="new 0 0 130 130"
+      viewBox="0 -30 190 190"
       id="youtube"
     >
       <path

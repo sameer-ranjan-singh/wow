@@ -1,9 +1,16 @@
 import "./App.css";
 import Dashboard from "./pages/Dashboard";
-
+import { Signup } from "./pages/Signup";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
  return (
-  <Dashboard/>
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<Dashboard/>}/>
+            <Route path="/signup" element={<Signup/>}/>
+            <Route path="/dashboard" element={<Dashboard/>}/>
+        </Routes>
+    </BrowserRouter>
  )
 }
 

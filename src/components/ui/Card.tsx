@@ -6,7 +6,7 @@ interface CardProp {
   theme: cardThemeTypes;
   title: String;
   link: String;
-  type: "youtube" | "twitter";
+  type: String;
 }
 
 const cardTheme: Record<cardThemeTypes, string> = {
