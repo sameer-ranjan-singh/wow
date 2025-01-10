@@ -4,10 +4,8 @@ import Logo from "../../icons/Logo.png";
 //   }
 const LandingPopup = () => {
   return (
-    // <div className="h-screen flex justify-center items-center bg-gradient-to-br from-blue-50 to-slate-200">
     <div className="h-screen flex justify-center items-center ">
       <img src={Logo} alt="Wow" className="opacity-5" />
-      {/* <h1 className="text-4xl border font-extrabold pt-10 bg-gradient-to-br from-lime-500 to-black bg-clip-text tracking-tighter text-transparent">Wow</h1> */}
     </div>
   );
 };

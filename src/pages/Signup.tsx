@@ -5,6 +5,7 @@ import axios from "axios";
 import { BACKEND_URL } from "../config";
 import Logo from "../icons/Logo.png";
 import { useNavigate } from "react-router-dom";
+import { useRedirect } from "../hooks/useRedirect";
 
 const switchPage = {
   signup: {
@@ -22,9 +23,10 @@ const switchPage = {
 };
 
 export const Signup = () => {
+  useRedirect()
   const [login, setToLogin] = useState(false);
   const nameRef = useRef<HTMLInputElement>();
-  const usernameRef = useRef<HTMLInputElement>();
+  // const usernameRef = useRef<HTMLInputElement>();
   const emailRef = useRef<HTMLInputElement>();
   const passwordRef = useRef<HTMLInputElement>();
 
@@ -32,13 +34,13 @@ export const Signup = () => {
 
   const createAccount = async () => {
     const name = nameRef.current?.value;
-    const username = usernameRef.current?.value;
+    // const username = usernameRef.current?.value;
     const email = emailRef.current?.value;
     const password = passwordRef.current?.value;
 
     await axios.post(`${BACKEND_URL}/api/v1/signup`, {
       name,
-      username,
+      // username,
       email,
       password,
     });
