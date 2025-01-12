@@ -1,12 +1,13 @@
+import axios from "axios";
+import { ContentProps } from "../../hooks/useContent";
 import { DeleteIcon } from "../../icons/DeleteIcon";
+import { HeartIcon } from "../../icons/HeartIcon";
 import { ShareIcon } from "../../icons/ShareIcon";
+import { BACKEND_URL } from "../../config";
 
 type cardThemeTypes = "dark" | "light";
-interface CardProp {
+interface CardProp extends ContentProps {
   theme: cardThemeTypes;
-  title: String;
-  link: String;
-  type: String;
 }
 
 const cardTheme: Record<cardThemeTypes, string> = {
@@ -15,31 +16,35 @@ const cardTheme: Record<cardThemeTypes, string> = {
 };
 
 const cardDefaultStyles =
-  "max-w-72 min-h-72 rounded-md shadow-md p-2 m-2 font-semibold border border-slate-200 flex flex-col justify-between";
+  "max-w-72 rounded-md shadow-md p-2 m-2 font-semibold border border-slate-200 flex flex-col justify-between";
 
-export const Card = ({ theme, title, link, type }: CardProp) => {
+export const Card = ({_id,theme,title,type,link,createdAt,favourite,tags}: CardProp) => {
+
+  const deleteCard = async () => {};
+  const shareCard = async () => {};
+  const addToFav = async () => {};
+
   return (
     <>
       <div className={`${cardDefaultStyles} ${cardTheme[theme]}`}>
         <div>
-          <div className="flex justify-between items-center px-2">
-            <div className="flex gap-2 items-center">
-              <a href={link as string}>
-                <ShareIcon size="md" />
-              </a>
-              <h1>{title}</h1>
+          <div className="flex justify-between items-center gap-2">
+            <div className="flex items-center">
+              <h1 className="w-full bg-white rounded-md p-2 pb-0 border border-l-gray-500 border-l-4 shadow-sm">
+                {title}
+              </h1>
             </div>
-            <div className="flex gap-3 ">
-              <a href={link as string}>
+            <div className="flex gap-3 items-start">
+              <div onClick={shareCard}>
                 <ShareIcon size="md" />
-              </a>
-              <a href={link as string}>
+              </div>
+              <div onClick={deleteCard}>
                 <DeleteIcon size="md" />
-              </a>
+              </div>
             </div>
           </div>
           <div className="pt-4">
-            {type == "youtube" && (
+            {type == "Youtube" && (
               <iframe
                 className="w-full "
                 src={link as string}
@@ -51,7 +56,7 @@ export const Card = ({ theme, title, link, type }: CardProp) => {
                 allowFullScreen
               ></iframe>
             )}
-            {type == "twitter" && (
+            {type === "Twitter" && (
               <blockquote className="twitter-tweet">
                 <p lang="en" dir="ltr">
                   At dawn from the gateway to Mars, the launch of Starship’s
@@ -79,8 +84,13 @@ export const Card = ({ theme, title, link, type }: CardProp) => {
             </ul>
           </div>
         </div>
-        <div className="text-start my-2">
-          <span className="text-gray-400 text-xs p-2">Added on 5/01/2025</span>
+        <div className="flex justify-between">
+          <span className="text-gray-400 text-xs p-2 text-start">
+            Added on {createdAt}
+          </span>
+          <div onClick={addToFav}>
+            <HeartIcon favourite ={favourite}/>
+          </div>
         </div>
       </div>
     </>

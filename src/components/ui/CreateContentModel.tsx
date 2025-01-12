@@ -1,42 +1,37 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Button } from "./Button";
 import { CloseIcon } from "./CloseIcon";
 import { Input } from "./Input";
 import axios from "axios";
 import { BACKEND_URL } from "../../config";
-import SelectContentType, { typeOptions } from "./SelectContentType";
+import SelectContentType from "./SelectContentType";
 
-// <CreatePopup/>
 export interface CreateContentModelProps {
   open: boolean;
   onClose: () => void;
-}
-
-export enum ContentTypes {
-  YOUTUBE = "Youtube",
-  TWITTER = "Twitter",
-  LINK = "Link",
-  DOC = "Doc",
 }
 
 export const CreateContentModel = ({
   open,
   onClose,
 }: CreateContentModelProps) => {
-  //Todo :  define interface for contentschema and create useRef for each
   const titleRef = useRef<HTMLInputElement>();
   const linkRef = useRef<HTMLInputElement>();
   const tagRef = useRef<HTMLInputElement>();
   const typeRef = useRef<HTMLInputElement>();
-  const [type, setType] = useState<ContentTypes>();
 
-  // const [type, setType] = useState(ContentTypes.YOUTUBE)
+  const todaysDate = () => {
+    const date = new Date();
+    const currentDate =
+      date.getDate() + "/" + date.getMonth() + 1 + "/" + date.getFullYear();
+    return currentDate;
+  };
 
   const addContent = async () => {
     const title = titleRef.current?.value;
     const link = linkRef?.current?.value;
-    const type = typeRef?.current?.value;
-    // const tags = tagRef?.current?.value;
+    const type = typeRef?.current?.textContent;
+    const tags = tagRef?.current?.value;
 
     await axios.post(
       `${BACKEND_URL}/api/v1/content`,
@@ -44,7 +39,9 @@ export const CreateContentModel = ({
         link,
         title,
         type,
-        tags: [],
+        tags,
+        favourite: false,
+        createdAt: todaysDate(),
       },
       {
         headers: {
@@ -72,13 +69,8 @@ export const CreateContentModel = ({
                     type="text"
                     reference={linkRef}
                   />
-                  <div className="lowercase">
-                    <SelectContentType
-                      type={typeOptions[0]}
-                      setType={typeOptions[0]}
-                      reference={typeRef}
-                    />
-                    <Input placeholder="Type" type="text" reference={typeRef} />
+                  <div className="">
+                    <SelectContentType reference={typeRef} />
                   </div>
                   {/* <Input placeholder="Tags" type="text" reference={tagRef}/> */}
                 </div>

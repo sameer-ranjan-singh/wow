@@ -23,7 +23,7 @@ export const Main = () => {
             <h1 className="font-bold text-md md:text-2xl ml-2">All Notes</h1>
           </div>
           <div className="flex gap-2 justify-end items-center ">
-            <Button
+            {/* <Button
               startIcon={<ShareIcon size="md" />}
               variant="secondary"
               size="md"
@@ -31,7 +31,7 @@ export const Main = () => {
               loading={false}
               loadIcon={<LoadingIcon size="sm" />}
               onClick={() => {}}
-            />
+            /> */}
             <Button
               onClick={() => setModalOpen(!isModalOpen)}
               startIcon={<PlusIcon size="md" />}
@@ -44,15 +44,18 @@ export const Main = () => {
           </div>
         </div>
         <div className="flex flex-wrap">
-          {JSON.stringify(contents)}
           {contents ? (
             contents.map((content: ContentProps) => (
               <Card
                 key={Math.floor(Math.random() * 100)}
+                _id={content._id}
                 theme="light"
                 title={content.title}
                 type={content.type}
                 link={content.link}
+                tags ={content.tags}
+                favourite ={content.favourite}
+                createdAt ={content.createdAt}
               />
             ))
           ) : (
@@ -60,7 +63,7 @@ export const Main = () => {
           )}
           {/* <Card
           theme="light"
-          type="twitter"
+          type="Twitter"
           link="https://x.com/han_wahe_sameer/status/1874493401430958569"
           title="First X post"
         /> */}

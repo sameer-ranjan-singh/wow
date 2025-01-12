@@ -5,12 +5,13 @@ import { useEffect } from "react";
 export const useRedirect = () => {
   const navigate = useNavigate();
   const sessionExist = useSession();
-  console.log("useSession() :", sessionExist);
+  // console.log("useSession() :", sessionExist);
 
   useEffect(() => {
-    if (!sessionExist) {
+    if (sessionExist) {
+      navigate("/dashboard");
+    } else {
       navigate("/signup");
     }
-    navigate("/dashboard");
   }, []);
 };

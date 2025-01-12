@@ -3,15 +3,17 @@ import { BACKEND_URL } from "../config";
 import { useEffect, useState } from "react";
 
 export interface ContentProps {
+  _id?: String;
   type: String;
   title: String;
   link: String;
-  tags: String;
+  tags?: String;
+  createdAt: String;
 }
 export function useContent() {
   const [contents, setContent] = useState<ContentProps[]>([]);
 
-  const fetchContent = async () => {
+  async function fetchContent() {
     const response = await axios.get(`${BACKEND_URL}/api/v1/content`, {
       headers: {
         Authorization: localStorage.getItem("token"),
@@ -19,10 +21,11 @@ export function useContent() {
     });
     const contentData = await response.data.content;
     setContent(contentData);
-  };
+  }
 
   useEffect(() => {
     fetchContent();
   }, []);
+
   return contents;
 }
