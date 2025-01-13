@@ -11,9 +11,7 @@ export function SiedeBar() {
         <img src={Logo} className="w-12 h-12" />
         <h1 className="font-extrabold text-2xl py-4">Wow</h1>
       </div>
-      <nav className="">
-       <SideItem/>
-      </nav>
+      <SideItem/>
     </aside>
   );
 }

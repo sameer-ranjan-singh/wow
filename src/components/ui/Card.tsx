@@ -18,11 +18,26 @@ const cardTheme: Record<cardThemeTypes, string> = {
 const cardDefaultStyles =
   "max-w-72 rounded-md shadow-md p-2 m-2 font-semibold border border-slate-200 flex flex-col justify-between";
 
-export const Card = ({_id,theme,title,type,link,createdAt,favourite,tags}: CardProp) => {
+export const Card = ({_id,theme,type,title,link,tags,favourite,createdAt}: CardProp) => {
 
-  const deleteCard = async () => {};
+  const deleteCard = async () => {
+    await axios.put(`${BACKEND_URL}/api/v1/content`,{
+      disableCard: true,
+      contentId: _id,
+    }, {
+      headers: { Authorization: localStorage.getItem("token") },
+    });
+  };
+
   const shareCard = async () => {};
-  const addToFav = async () => {};
+  const addToFav = async () => {
+    await axios.put(`${BACKEND_URL}/api/v1/content`,{
+      contentId: _id,
+      favourite: !favourite, //check !favourite 
+    }, {
+      headers: { Authorization: localStorage.getItem("token") },
+    });
+  };
 
   return (
     <>

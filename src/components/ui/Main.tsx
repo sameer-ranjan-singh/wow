@@ -5,19 +5,24 @@ import { PlusIcon } from "../../icons/PlusIcon";
 import { LoadingIcon } from "../../icons/LoadingIcon";
 import { ShareIcon } from "../../icons/ShareIcon";
 import { Card } from "./Card";
-import { ContentProps, useContent } from "../../hooks/useContent";
+import {
+  ContentLiveOrDeleted,
+  ContentProps,
+  useContent,
+} from "../../hooks/useContent";
 
 export const Main = () => {
   const [isModalOpen, setModalOpen] = useState(false);
-  const contents: ContentProps[] = useContent();
+  const contents: ContentLiveOrDeleted = useContent();
+  const enabledContent = contents.enabledData;
 
   return (
     <>
       <div className=" flex flex-col p-8">
-      <CreateContentModel
-        open={isModalOpen}
-        onClose={() => setModalOpen(false)}
-      />
+        <CreateContentModel
+          open={isModalOpen}
+          onClose={() => setModalOpen(false)}
+        />
         <div className="flex justify-between my-4">
           <div>
             <h1 className="font-bold text-md md:text-2xl ml-2">All Notes</h1>
@@ -44,18 +49,20 @@ export const Main = () => {
           </div>
         </div>
         <div className="flex flex-wrap">
-          {contents ? (
-            contents.map((content: ContentProps) => (
+          {enabledContent.length != 0 ? (
+            enabledContent.map((content: ContentProps) => (
               <Card
                 key={Math.floor(Math.random() * 100)}
                 _id={content._id}
                 theme="light"
-                title={content.title}
                 type={content.type}
+                title={content.title}
                 link={content.link}
-                tags ={content.tags}
-                favourite ={content.favourite}
-                createdAt ={content.createdAt}
+                tags={content.tags}
+                favourite={content.favourite}
+                disableCard={content.disableCard}
+                createdAt={content.createdAt}
+                updatedAt={content.updatedAt}
               />
             ))
           ) : (

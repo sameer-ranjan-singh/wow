@@ -28,20 +28,22 @@ export const CreateContentModel = ({
   };
 
   const addContent = async () => {
+    const type = typeRef?.current?.textContent;
     const title = titleRef.current?.value;
     const link = linkRef?.current?.value;
-    const type = typeRef?.current?.textContent;
     const tags = tagRef?.current?.value;
 
     await axios.post(
       `${BACKEND_URL}/api/v1/content`,
       {
-        link,
-        title,
         type,
+        title,
+        link,
         tags,
         favourite: false,
+        disableCard: false,
         createdAt: todaysDate(),
+        updatedAt: todaysDate(),
       },
       {
         headers: {
@@ -49,6 +51,7 @@ export const CreateContentModel = ({
         },
       }
     );
+    onClose();
   };
 
   return (
