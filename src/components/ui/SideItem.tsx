@@ -13,18 +13,18 @@ export interface NavItemProps {
   href: string;
 }
 const navItmes: NavItemProps[] = [
-  { href: "/twitter", iconLabel: "Twitter", icon: <TwitterIcon /> },
-  { href: "/videos", iconLabel: "Videos", icon: <YoutubeIcon /> },
-  { href: "/docs", iconLabel: "Docs", icon: <DocsIcon /> },
-  { href: "/links", iconLabel: "Links", icon: <LinkIcon /> },
-  { href: "/fav", iconLabel: "Favs", icon: <HeartIconFilled /> },
-  { href: "/bin", iconLabel: "Trash", icon: <TrashIcon /> },
+  { href: "twitter", iconLabel: "Twitter", icon: <TwitterIcon /> },
+  { href: "videos", iconLabel: "Videos", icon: <YoutubeIcon /> },
+  { href: "docs", iconLabel: "Docs", icon: <DocsIcon /> },
+  { href: "links", iconLabel: "Links", icon: <LinkIcon /> },
+  { href: "fav", iconLabel: "Favs", icon: <HeartIconFilled /> },
+  { href: "bin", iconLabel: "Trash", icon: <TrashIcon /> },
 ];
 
 export const SideItem = () => {
   return (
     <nav>
-      <ul className=" flex flex-col justify-center items-center pl-4 ">
+      <ul className=" flex flex-col justify-center items-center">
         {navItmes.map((item) => (
           <li
             key={item.iconLabel}
@@ -32,7 +32,7 @@ export const SideItem = () => {
           >
             <Link
               to={item.href}
-              className="text-gray-700 -200 w-48 hover:border-lime-500  hover:text-lime-500 hover:font-bold hover:uppercase border-b flex justify-center items-center p-2 py-3  "
+              className="text-gray-700 w-48 hover:border-slate-400  hover:text-slate-500 hover:font-bold hover:uppercase border-b flex justify-center items-center p-2 py-3  "
             >
               <span className="w-3/12  flex justify-start items-center h-12 ">
                 {item.icon}

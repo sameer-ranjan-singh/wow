@@ -25,7 +25,7 @@ export const Navbar = () => {
     }
   };
   return (
-    <div className="flex justify-around md:justify-end items-center  px-4 pt-4">
+    <div className="flex justify-around md:justify-end items-center p-4 border-b h-12">
       <div className="md:hidden">
         <img src={Logo} className="w-8 h-6" />
       </div>
@@ -33,7 +33,7 @@ export const Navbar = () => {
         {navBarItems.map((item) => (
           <h2
             key={item.label}
-            className="font-mono text-md md:text-lg hover:border-b hover:font-bold"
+            className="font-serif text-sm md:text-md hover:border-b hover:font-bold"
           >
             {item.label}
           </h2>
