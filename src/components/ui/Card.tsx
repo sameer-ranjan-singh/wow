@@ -4,6 +4,7 @@ import { DeleteIcon } from "../../icons/DeleteIcon";
 import { HeartIcon } from "../../icons/HeartIcon";
 import { ShareIcon } from "../../icons/ShareIcon";
 import { BACKEND_URL } from "../../config";
+import { RestoreIcon } from "../../icons/RestoreIcon";
 
 type cardThemeTypes = "dark" | "light";
 interface CardProp extends ContentProps {
@@ -18,25 +19,54 @@ const cardTheme: Record<cardThemeTypes, string> = {
 const cardDefaultStyles =
   "max-w-72 rounded-md shadow-md p-2 m-2 font-semibold border border-slate-200 flex flex-col justify-between";
 
-export const Card = ({_id,theme,type,title,link,tags,favourite,createdAt}: CardProp) => {
-
+export const Card = ({
+  _id,
+  theme,
+  type,
+  title,
+  link,
+  tags,
+  favourite,
+  disableCard,
+  createdAt,
+}: CardProp) => {
   const deleteCard = async () => {
-    await axios.put(`${BACKEND_URL}/api/v1/content`,{
-      disableCard: true,
-      contentId: _id,
-    }, {
-      headers: { Authorization: localStorage.getItem("token") },
-    });
+    await axios.put(
+      `${BACKEND_URL}/api/v1/content`,
+      {
+        disableCard: true,
+        contentId: _id,
+      },
+      {
+        headers: { Authorization: localStorage.getItem("token") },
+      }
+    );
+  };
+  const restoreCard = async () => {
+    await axios.put(
+      `${BACKEND_URL}/api/v1/content`,
+      {
+        disableCard: false,
+        contentId: _id,
+      },
+      {
+        headers: { Authorization: localStorage.getItem("token") },
+      }
+    );
   };
 
   const shareCard = async () => {};
   const addToFav = async () => {
-    await axios.put(`${BACKEND_URL}/api/v1/content`,{
-      contentId: _id,
-      favourite: !favourite, //check !favourite 
-    }, {
-      headers: { Authorization: localStorage.getItem("token") },
-    });
+    await axios.put(
+      `${BACKEND_URL}/api/v1/content`,
+      {
+        contentId: _id,
+        favourite: !favourite, //check !favourite
+      },
+      {
+        headers: { Authorization: localStorage.getItem("token") },
+      }
+    );
   };
 
   return (
@@ -50,12 +80,20 @@ export const Card = ({_id,theme,type,title,link,tags,favourite,createdAt}: CardP
               </h1>
             </div>
             <div className="flex gap-3 items-start">
-              <div onClick={shareCard}>
-                <ShareIcon size="md" />
-              </div>
-              <div onClick={deleteCard}>
-                <DeleteIcon size="md" />
-              </div>
+              {disableCard ? (
+                <div onClick={restoreCard}>
+                  <RestoreIcon />
+                </div>
+              ) : (
+                <>
+                  <div onClick={shareCard}>
+                    <ShareIcon size="md" />
+                  </div>
+                  <div onClick={deleteCard}>
+                    <DeleteIcon size="md" />
+                  </div>
+                </>
+              )}
             </div>
           </div>
           <div className="pt-4">
@@ -104,7 +142,7 @@ export const Card = ({_id,theme,type,title,link,tags,favourite,createdAt}: CardP
             Added on {createdAt}
           </span>
           <div onClick={addToFav}>
-            <HeartIcon favourite ={favourite}/>
+            <HeartIcon favourite={favourite} />
           </div>
         </div>
       </div>
