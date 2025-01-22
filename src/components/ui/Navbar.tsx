@@ -4,8 +4,8 @@ import { Button } from "./Button";
 import Logo from "../../icons/Logo.png";
 
 const navBarItems = [
+  { href: "/linkstore", label: "Link Store", icon: "" },
   { href: "/cv", label: "CV", icon: "" },
-  { href: "/AI", label: "askAI", icon: "" },
 ];
 
 const sessionKeys = {
@@ -33,7 +33,7 @@ export const Navbar = () => {
         {navBarItems.map((item) => (
           <h2
             key={item.label}
-            className="font-serif text-sm md:text-md hover:border-b hover:font-bold"
+            className="font-mono text-sm md:text-md hover:border-b hover:font-bold"
           >
             {item.label}
           </h2>

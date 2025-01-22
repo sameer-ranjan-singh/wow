@@ -32,7 +32,7 @@ export const SideItem = () => {
           >
             <Link
               to={item.href}
-              className="text-gray-700 w-48 hover:border-slate-400  hover:text-slate-500 hover:font-bold hover:uppercase border-b flex justify-center items-center p-2 py-3  "
+              className="text-gray-700 w-48 hover:border-slate-400  hover:text-slate-500 hover:font-bold border-b flex justify-center items-center p-2 py-3"
             >
               <span className="w-3/12  flex justify-start items-center h-12 ">
                 {item.icon}

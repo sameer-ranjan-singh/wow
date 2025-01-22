@@ -3,5 +3,29 @@
 @tailwind utilities;
 
 ::-webkit-scrollbar {
-    width: 0px;
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track:vertical {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb:vertical {
+    background: rgb(54, 54, 54);
+    border-radius: 5px;
+}
+
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover:vertical {
+    background: rgb(39, 112, 229);
+}
+
+/* Handle on focus */
+::-webkit-scrollbar-thumb:active:vertical {
+    background: rgb(6, 74, 182);
+
 }

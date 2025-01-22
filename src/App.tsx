@@ -7,9 +7,9 @@ import { Youtube } from "./pages/Youtube";
 import { NotFound } from "./pages/NotFound";
 import { Main } from "./components/ui/Main";
 import { Trash } from "./pages/Trash";
-import Docs from "./pages/Docs";
-import Links from "./pages/Links";
-import Fav from "./pages/Fav";
+import {Docs} from "./pages/Docs";
+import {Links} from "./pages/Links";
+import {Fav} from "./pages/Fav";
 import { DashboardLayout } from "./pages/Dashboard";
 
 function App() { 
