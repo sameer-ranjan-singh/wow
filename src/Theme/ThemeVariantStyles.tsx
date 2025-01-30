@@ -109,7 +109,7 @@ export interface ThemeVariantProps {
   };
 }
 
-export const themeVariantStyles: Record<ThemeEnum, ThemeVariantProps> = {
+export const ThemeVariantStyles: Record<ThemeEnum, ThemeVariantProps> = {
   light: {
     header: {
       text_color_primary: "text-blue-600",

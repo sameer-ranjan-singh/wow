@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useContext } from "react";
 import { ThemeContext } from "./ThemeProvider"
-import { ThemeEnum, themeVariantStyles } from "./ThemeVariantStyles"
+import { ThemeEnum, ThemeVariantStyles } from "./ThemeVariantStyles"
 
 export const ThemeIcon = () => {
   const { themeStyle, setShowTheme, showTheme } = useContext(ThemeContext);
@@ -72,7 +72,7 @@ export const SelectTheme = ({
       >
         <div className="flex rounded-full border-2">
           <div
-            className={`rounded-full w-4 h-4 ${themeVariantStyles.dark.intro.bgGradient}`}
+            className={`rounded-full w-4 h-4 ${ThemeVariantStyles.dark.intro.bgGradient}`}
           ></div>
         </div>
       </li>
@@ -86,7 +86,7 @@ export const SelectTheme = ({
         <div className="flex rounded-full border-2 border-yellow-400">
           <div className={`rounded-l-full w-2 h-4 bg-yellow-100`}></div>
           <div
-            className={`rounded-r-full w-2 h-4 ${themeVariantStyles.alpha.intro.bgGradient}`}
+            className={`rounded-r-full w-2 h-4 ${ThemeVariantStyles.alpha.intro.bgGradient}`}
           ></div>
         </div>
       </li>
@@ -99,7 +99,7 @@ export const SelectTheme = ({
       >
         <div className="flex rounded-full border-2 border-gray-600">
           <div
-            className={`rounded-l-full w-2 h-4 ${themeVariantStyles.sassy.intro.bgGradient}`}
+            className={`rounded-l-full w-2 h-4 ${ThemeVariantStyles.sassy.intro.bgGradient}`}
           ></div>
           <div className={`rounded-r-full w-2 h-4 bg-neutral-900`}></div>
         </div>
@@ -114,7 +114,7 @@ export const SelectTheme = ({
         <div className="flex rounded-full border-2 border-orange-500">
           <div className={`rounded-l-full w-2 h-4 bg-orange-200`}></div>
           <div
-            className={`rounded-r-full w-2 h-4 ${themeVariantStyles.wow.intro.bgGradient}`}
+            className={`rounded-r-full w-2 h-4 ${ThemeVariantStyles.wow.intro.bgGradient}`}
           ></div>
         </div>
       </li>
