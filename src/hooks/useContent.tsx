@@ -21,7 +21,7 @@ export function useContent() {
   const [contents, setContent] = useState<ContentLiveOrDeleted>({enabledData: [], disabledData: []});
 
   async function fetchContent() {
-    const response = await axios.get(`${BACKEND_URL}/api/v1/content`, {
+    const response = await axios.get(`${BACKEND_URL}/api/v1/user/content`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },

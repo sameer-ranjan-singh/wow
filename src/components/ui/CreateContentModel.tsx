@@ -34,7 +34,7 @@ export const CreateContentModel = ({
     const tags = tagRef?.current?.value;
 
     await axios.post(
-      `${BACKEND_URL}/api/v1/content`,
+      `${BACKEND_URL}/api/v1/user/content`,
       {
         type,
         title,
