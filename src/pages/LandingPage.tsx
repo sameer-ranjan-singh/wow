@@ -4,7 +4,6 @@ import S2Features from "../components/landingPage/S2Features";
 import S3HookFeature from "../components/landingPage/S3HookFeature";
 import S4Services from "../components/landingPage/S4Services";
 import S5Price from "../components/landingPage/S5Price";
-import S6Testimonial from "../components/landingPage/S6Testimonial";
 import S7Footer from "../components/landingPage/S7Footer";
 
 export const LandingPage = () => {
@@ -28,8 +27,6 @@ export const LandingPage = () => {
       {/* Section-5 : ServicePlans- Price*/}
       <S5Price />
 
-      {/* Section-6 : Testimonial */}
-      {/* <S6Testimonial /> */}
 
       {/* Section-9 : Footer */}
       <S7Footer />

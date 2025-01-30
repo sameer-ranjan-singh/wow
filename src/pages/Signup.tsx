@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { Button } from "../components/ui/Button";
-import { HtmlInputElement, Input } from "../components/ui/Input";
+import { Input } from "../components/ui/Input";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
 import Logo from "../icons/Logo.png";

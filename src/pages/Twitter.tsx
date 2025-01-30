@@ -1,4 +1,3 @@
-import { ContentLiveOrDeleted, useContent } from "../hooks/useContent";
 
 export const Twitter = () => {
   //   const contents: ContentLiveOrDeleted = useContent();

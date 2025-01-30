@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { ThemeContext } from '../../Theme/ThemeProvider';
 import { data } from './data';
 import { FeatureCard } from './FeatureCard';

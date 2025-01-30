@@ -25,7 +25,7 @@ export const Card = ({
   type,
   title,
   link,
-  tags,
+  // tags,
   favourite,
   disableCard,
   createdAt,

@@ -1,5 +1,4 @@
 import { ReactElement } from "react";
-import { LoadingIcon } from "../../icons/LoadingIcon";
 
 export type Variants = "primary" | "secondary";
 export type sizeVariants = "sm" | "md" | "lg";

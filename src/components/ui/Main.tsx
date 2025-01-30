@@ -3,7 +3,6 @@ import { CreateContentModel } from "./CreateContentModel";
 import { Button } from "./Button";
 import { PlusIcon } from "../../icons/PlusIcon";
 import { LoadingIcon } from "../../icons/LoadingIcon";
-import { ShareIcon } from "../../icons/ShareIcon";
 import { Card } from "./Card";
 import {
   ContentLiveOrDeleted,
