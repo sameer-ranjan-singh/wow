@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react";
-import { ThemeEnum, ThemeVariantProps, themeVariantStyles } from "../Theme/themes"
+import { ThemeEnum, ThemeVariantProps, themeVariantStyles } from "./ThemeVariantStyles"
 
 interface ThemeContextProps {
   themeName: ThemeEnum;
@@ -22,9 +22,7 @@ export const ThemeContext = createContext<ThemeContextProps>({
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [showTheme, setShowTheme] = useState<true | false>(false);
   const [themeName, setThemeName] = useState<ThemeEnum>(ThemeEnum.LIGHT);
-  const [themeStyle, setThemeStyle] = useState<ThemeVariantProps>(
-    themeVariantStyles.wow
-  );
+  const [themeStyle, setThemeStyle] = useState<ThemeVariantProps>(themeVariantStyles.wow);
 
   const toggleTheme = (theme: ThemeEnum) => {
     setThemeName(theme);

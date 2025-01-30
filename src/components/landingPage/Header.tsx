@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { ThemeContext } from "../../Theme/ThemeProvider";
+import { ThemeContext } from "../../theme/ThemeProvider";
 import ButtonLP from "./ButtonLP";
 
 export const linkToObj = [

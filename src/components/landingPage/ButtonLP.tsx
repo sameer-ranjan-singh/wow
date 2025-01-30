@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { ThemeContext } from "../../Theme/ThemeProvider";
+import { ThemeContext } from "../../theme/ThemeProvider";
 import { useContext } from "react";
 
 interface ButtonProps {

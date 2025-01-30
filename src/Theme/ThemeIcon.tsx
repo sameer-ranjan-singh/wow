@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useContext } from "react";
-import { ThemeContext } from "./ThemeProvider";
-import { ThemeEnum, themeVariantStyles } from "../Theme/themes";
+import { ThemeContext } from "./ThemeProvider"
+import { ThemeEnum, themeVariantStyles } from "./ThemeVariantStyles"
 
 export const ThemeIcon = () => {
   const { themeStyle, setShowTheme, showTheme } = useContext(ThemeContext);

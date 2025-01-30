@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { ThemeContext } from "../../Theme/ThemeProvider";
+import { ThemeContext } from "../../theme/ThemeProvider";
 import { data } from "./data";
 import { LandingPage } from "../../pages/LandingPage";
 import beforeImage from "../../icons/BeforeImage.png";
