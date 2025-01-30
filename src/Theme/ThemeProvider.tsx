@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react";
-import { ThemeEnum, ThemeVariantProps, themeVariantStyles } from "./themes";
+import { ThemeEnum, ThemeVariantProps, themeVariantStyles } from "../Theme/themes"
 
 interface ThemeContextProps {
   themeName: ThemeEnum;
