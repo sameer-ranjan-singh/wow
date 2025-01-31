@@ -5,7 +5,6 @@ export interface FeatureCard {
     title: String;
     icon: () => JSX.Element | "#";
     detail: String;
-
   }
 
 export const FeatureCard = ({ card }: { card: FeatureCard }) => {
