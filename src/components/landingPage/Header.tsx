@@ -19,7 +19,7 @@ const Header = () => {
   return (
     <header
       id="header"
-      className={`z-20 h-14 opacity-90 py-2 px-4 md:px-10 flex md:justify-around justify-between items-center fixed ${themeStyle.header.bgGradient} `}
+      className={`fixed z-20 h-14 opacity-90 py-2 px-4 md:px-0 flex md:justify-around justify-between items-center ${themeStyle.header.bgGradient} `}
     >
       <h1
         className={`font-extrabold font-sans text-xl ${themeStyle.header.title}`}

@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useContext } from "react";
-import { ThemeContext } from "./ThemeProvider"
-import { ThemeEnum, themeVariantStyles } from "./themeVariantStyles"
+import { ThemeContext } from "./ThemeProvider";
+import { ThemeEnum, themeVariantStyles } from "./themeVariantStyles";
 
 export const ThemeIcon = () => {
   const { themeStyle, setShowTheme, showTheme } = useContext(ThemeContext);
@@ -50,7 +50,7 @@ export const SelectTheme = ({
   return (
     <ul
       id="selectedtheme"
-      className={`absolute p-2 space-y-4 font-semibold font-mono outline-none capitalize bg-opacity-80 shadow-md rounded-lg rounded-t-none ${themeStyle.features.bgGradient}`}
+      className={`absolute p-2 space-y-4 font-semibold font-mono outline-none capitalize bg-opacity-80 shadow-md rounded-lg rounded-t-none ${themeStyle.services.card.bgGradient}`}
     >
       {/* LIGHT */}
       <li

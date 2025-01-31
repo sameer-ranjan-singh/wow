@@ -115,7 +115,8 @@ export const themeVariantStyles: Record<ThemeEnum, ThemeVariantProps> = {
       text_color_primary: "text-blue-600",
       text_color_secondary: "text-gray-600",
       bgSolid: "bg-white",
-      bgGradient: "bg-gradient-to-b from-white to-gray-100 bg-opacity-30 shadow-lg rounded-b-2xl w-3/5 md:max-w-3xl",
+      bgGradient:
+        "bg-gradient-to-b from-white to-gray-100 bg-opacity-30 shadow-lg rounded-b-2xl w-3/5 md:max-w-3xl",
       title: "text-neutral-800",
       btn: {
         bgSolid: "bg-blue-500 hover:bg-blue-700 ",
@@ -221,7 +222,8 @@ export const themeVariantStyles: Record<ThemeEnum, ThemeVariantProps> = {
       text_color_primary: "text-white",
       text_color_secondary: "text-gray-400",
       bgSolid: "bg-gray-900",
-      bgGradient: "rounded-b-2xl w-3/5 md:max-w-3xl bg-gradient-to-b from-gray-700 to-gray-900 shadow-lg",
+      bgGradient:
+        "rounded-b-2xl w-3/5 md:max-w-3xl bg-gradient-to-b from-gray-700 to-gray-900 shadow-lg",
       title: "text-white",
       btn: {
         bgSolid: "bg-blue-500 hover:bg-blue-700",
@@ -359,7 +361,7 @@ export const themeVariantStyles: Record<ThemeEnum, ThemeVariantProps> = {
     features: {
       text_color_primary: "text-gray-800", // Secondary Black
       bgSolid: "bg-orange-100", // Light Orange
-      bgGradient: "bg-orange-200",
+      bgGradient: "bg-gradient-to-b from-gray-200 to-orange-200",
       title: "text-orange-500",
       span: "text-orange-500", // Primary Orange
       description: "text-gray-600",
@@ -380,7 +382,7 @@ export const themeVariantStyles: Record<ThemeEnum, ThemeVariantProps> = {
       title: "gradient-title from-orange-300 to-orange-500", // Light Orange Gradient
       description: "text-gray-700",
       bgSolid: "bg-orange-100", // Light Orange
-      bgGradient: "bg-gradient-to-b from-orange-50 to-orange-200 pt-10",
+      bgGradient: "bg-gradient-to-b from-white to-orange-200",
       card: {
         bgGradient: "bg-gradient-to-br from-orange-50 to-white", // Lighter Gradient
         border: "border-orange-400",
@@ -398,7 +400,7 @@ export const themeVariantStyles: Record<ThemeEnum, ThemeVariantProps> = {
       description: "text-gray-700",
       bgSolid: "bg-orange-50", // Lightest Orange
       bgGradient:
-        "rounded-es-full rounded-ee-full bg-gradient-to-b from-orange-200 from-10% via-orange-50 via-40% to-gray-100",
+        " bg-gradient-to-b from-orange-200 from-10% via-orange-50 via-40% to-gray-100",
       card: {
         bgGradient: "bg-gradient-to-br from-white to-orange-50", // Lighter Gradient
         border: "border-orange-400",
@@ -455,8 +457,10 @@ export const themeVariantStyles: Record<ThemeEnum, ThemeVariantProps> = {
       span2: "text-gray-500", // Slightly lighter gray accent
       description: "text-gray-600", // Medium gray description
       btn: {
-        bgPrimary: "shadow-lg transition ease-in-out delay-150 bg-gray-900 hover:-translate-y-1 hover:scale-110 hover:bg-gray-800 hover:text-white duration-300", // Black button
-        bgSecondary: "hover:shadow-lg border border-gray-300 hover:border-gray-500", // Gray border on hover
+        bgPrimary:
+          "shadow-lg transition ease-in-out delay-150 bg-gray-900 hover:-translate-y-1 hover:scale-110 hover:bg-gray-800 hover:text-white duration-300", // Black button
+        bgSecondary:
+          "hover:shadow-lg border border-gray-300 hover:border-gray-500", // Gray border on hover
         textPrimary: "text-white",
         textSecondary: "text-gray-700 hover:text-gray-900",
         borderPrimary: "",
@@ -489,12 +493,14 @@ export const themeVariantStyles: Record<ThemeEnum, ThemeVariantProps> = {
       bgSolid: "bg-white", // White background
       bgGradient: "bg-gradient-to-t from-gray-100 to-white", // Light gray to white gradient
       card: {
-        bgGradient: "bg-gradient-to-r from-white to-gray-50 hover:bg-gradient-to-b hover:to-gray-100", // White to light gray, hover effect
+        bgGradient:
+          "bg-gradient-to-r from-white to-gray-50 hover:bg-gradient-to-b hover:to-gray-100", // White to light gray, hover effect
         border: "border-gray-100",
         title: "text-gray-900",
         description: "text-gray-600",
         btn: {
-          bgSolid: "text-white font-semibold transition ease-in-out delay-150 bg-gray-900 hover:-translate-y-1 hover:scale-110 hover:bg-gray-800 duration-300", // Black button
+          bgSolid:
+            "text-white font-semibold transition ease-in-out delay-150 bg-gray-900 hover:-translate-y-1 hover:scale-110 hover:bg-gray-800 duration-300", // Black button
           text: "text-white",
         },
       },
@@ -512,7 +518,8 @@ export const themeVariantStyles: Record<ThemeEnum, ThemeVariantProps> = {
         text_color_primary: "text-gray-900",
         text_color_secondary: "text-gray-500",
         btn: {
-          bgSolid: "transition ease-in-out delay-150 bg-gray-900 hover:-translate-y-1 hover:scale-110 hover:bg-gray-800 duration-300", // Black button
+          bgSolid:
+            "transition ease-in-out delay-150 bg-gray-900 hover:-translate-y-1 hover:scale-110 hover:bg-gray-800 duration-300", // Black button
           text: "text-white",
         },
       },
@@ -540,25 +547,29 @@ export const themeVariantStyles: Record<ThemeEnum, ThemeVariantProps> = {
       text_color_primary: "text-gray-900",
       text_color_secondary: "text-gray-500",
       bgSolid: "bg-yellow-400",
-      bgGradient: "m-4 rounded-full w-3/5 md:max-w-3xl bg-gradient-to-b from-yellow-100 to-yellow-200 shadow-lg",
+      bgGradient:
+        "m-4 rounded-full w-3/5 md:max-w-3xl bg-gradient-to-b from-yellow-100 to-yellow-200 shadow-lg",
       title: "text-gray-900 font-bold",
       btn: {
         bgSolid: "bg-gray-900 hover:bg-gray-800",
-        text: "text-orange-600",
+        text: "text-white",
       },
     },
     intro: {
       text_color_primary: "text-gray-800",
       bgSolid: "bg-yellow-200", // Slightly darker yellow for intro
-      bgGradient: "bg-gradient-to-br from-yellow-500 via-yellow-400 to-yellow-500", // Blend with header
+      bgGradient:
+        "bg-gradient-to-br from-yellow-500 via-yellow-400 to-yellow-500", // Blend with header
       title1: "gradient-title from-yellow-100 to-yellow-200", // Darker yellow title
       title2: "text-gray-900 font-bold",
       span1: "gradient-title from-yellow-600 to-yellow-800", // Darker yellow accent
       span2: "text-yellow-600",
       description: "text-gray-700",
       btn: {
-        bgPrimary: "shadow-lg transition ease-in-out delay-150 bg-gray-900 hover:-translate-y-1 hover:scale-110 hover:bg-gray-800 hover:text-white duration-300",
-        bgSecondary: "hover:shadow-lg border border-yellow-400 hover:border-yellow-600", // Darker yellow border on hover
+        bgPrimary:
+          "shadow-lg transition ease-in-out delay-150 bg-gray-900 hover:-translate-y-1 hover:scale-110 hover:bg-gray-800 hover:text-white duration-300",
+        bgSecondary:
+          "hover:shadow-lg border border-yellow-400 hover:border-yellow-600", // Darker yellow border on hover
         textPrimary: "text-white",
         textSecondary: "text-gray-900 hover:text-gray-800",
         borderPrimary: "",
@@ -591,12 +602,14 @@ export const themeVariantStyles: Record<ThemeEnum, ThemeVariantProps> = {
       bgSolid: "bg-yellow-50",
       bgGradient: "bg-gradient-to-t from-yellow-100 to-yellow-50", // Light yellow gradient
       card: {
-        bgGradient: "bg-gradient-to-r from-white to-yellow-50 hover:bg-gradient-to-b hover:to-yellow-100", // White to light yellow, hover effect
+        bgGradient:
+          "bg-gradient-to-r from-white to-yellow-50 hover:bg-gradient-to-b hover:to-yellow-100", // White to light yellow, hover effect
         border: "border-yellow-100",
         title: "text-gray-900",
         description: "text-gray-700",
         btn: {
-          bgSolid: "text-white font-semibold transition ease-in-out delay-150 bg-gray-900 hover:-translate-y-1 hover:scale-110 hover:bg-gray-800 duration-300", // Black button
+          bgSolid:
+            "text-white font-semibold transition ease-in-out delay-150 bg-gray-900 hover:-translate-y-1 hover:scale-110 hover:bg-gray-800 duration-300", // Black button
           text: "text-white",
         },
       },
@@ -614,7 +627,8 @@ export const themeVariantStyles: Record<ThemeEnum, ThemeVariantProps> = {
         text_color_primary: "text-gray-900",
         text_color_secondary: "text-gray-500",
         btn: {
-          bgSolid: "transition ease-in-out delay-150 bg-gray-900 hover:-translate-y-1 hover:scale-110 hover:bg-gray-800 duration-300", // Black button
+          bgSolid:
+            "transition ease-in-out delay-150 bg-gray-900 hover:-translate-y-1 hover:scale-110 hover:bg-gray-800 duration-300", // Black button
           text: "text-white",
         },
       },

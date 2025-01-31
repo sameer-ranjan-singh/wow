@@ -11,13 +11,13 @@ const S2Features = () => {
     id="features"
     className={`w-full pt-10 ${themeStyle.features.bgGradient} ${themeStyle.features.title}`}
   >
-    <div className="min-h-screen flex flex-col justify-center items-center py-10 mx-2 gap-20">
+    <div className="min-h-screen flex flex-col justify-center items-center py-10 mx-2 gap-10">
       <div className="">
         <h1 className="text-2xl md:text-4xl font-semibold mb-5 text-center font-serif">
           {features.title}
         </h1>
         <p
-          className={`text-lg ${themeStyle.features.description} text-center font-sans`}
+          className={`text-sm md:text-lg ${themeStyle.features.description} text-center font-sans mx-5`}
         >
           # {features.description}
         </p>

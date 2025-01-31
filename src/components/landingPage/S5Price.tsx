@@ -13,7 +13,7 @@ const S5Price = () => {
   return (
     <section
       id="plans"
-      className={`w-full py-20 ${themeStyle.price.bgGradient}`}
+      className={`w-full pt-10 ${themeStyle.price.bgGradient}`}
     >
       <div className="min-h-screen flex flex-col justify-center items-center mx-2 gap-10">
         <div className="">
@@ -31,7 +31,7 @@ const S5Price = () => {
         <div className="flex flex-wrap justify-center items-center gap-5">
           {servicePlans.cards.map((card) => (
             <div
-              className={`m-5 shadow-lg rounded-2xl p-10 font-mono flex flex-col text-start justify-start gap-4 min-w-96 ${themeStyle.price.card.bgGradient} ${themeStyle.price.card.border}`}
+              className={`m-5 shadow-lg rounded-2xl p-10 font-mono flex flex-col text-start justify-start gap-4 min-w-80 md:min-w-96 ${themeStyle.price.card.bgGradient} ${themeStyle.price.card.border}`}
             >
               <h1
                 className={`mb-2 text-xl font-extrabold text-center ${themeStyle.price.card.text_color_primary}`}

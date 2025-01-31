@@ -12,7 +12,7 @@ const S4Services = () => {
   return (
     <section
       id="services"
-      className={`w-full pb-20 ${themeStyle.services.bgGradient}`}
+      className={`w-full py-10 ${themeStyle.services.bgGradient}`}
     >
       <div className="min-h-screen flex flex-col justify-center items-center mx-2 gap-10">
         <div className="">
@@ -22,7 +22,7 @@ const S4Services = () => {
             {services.title}
           </h3>
           <p
-            className={`text-sm md:text-lg  ${themeStyle.services.description} text-center font-mono`}
+            className={`text-sm md:text-lg mx-5  ${themeStyle.services.description} text-center font-mono`}
           >
             # {services.description}
           </p>
@@ -30,7 +30,7 @@ const S4Services = () => {
         <div className="flex flex-wrap justify-center items-center gap-5">
           {services.cards.map((card) => (
             <div
-              className={`m-5 shadow-lg rounded-lg p-10 flex flex-col text-start justify-start gap-4 min-w-96 ${themeStyle.services.card.bgGradient}`}
+              className={`shadow-md rounded-lg p-7 md:p-10 flex flex-col text-start justify-start gap-2 min-w-80 md:min-w-96 ${themeStyle.services.card.bgGradient}`}
             >
               <div className="mb-4 animate-pulse">
                 <card.icon />
@@ -47,7 +47,7 @@ const S4Services = () => {
                       <CheckIcon />
                     </div>
                     <p
-                      className={`${themeStyle.services.card.description} font-semibold font-mono`}
+                      className={`${themeStyle.services.card.description} text-sm font-semibold font-mono`}
                     >
                       {service}
                     </p>

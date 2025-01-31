@@ -6,12 +6,12 @@ import VideoIcon from "../../icons/VideoIcon";
 import DeployIcon from "../../icons/DeployIcon";
 import UpdatingIcon from "../../icons/UpdatingIcon";
 import CustomizeIcon from "../../icons/CustomizeIcon";
-import TickIcon from "../../icons/TickIcon";
 import { LinkedinIcon } from "../../icons/LinkedinIcon";
 import { LpTwitterIcon } from "../../icons/LpTwitterIcon";
 import { LpGithubIcon } from "../../icons/LpGithubIcon";
 
 export const data = {
+  //intro
   section1: {
     span1: "Your Digital",
     span2: "Identity,",
@@ -19,6 +19,7 @@ export const data = {
     description:
       "Transform your CV into a stunning portfolio website. Store your links, documents, tweets, and notes in one central hub. Plus, get access to professional software and deployment services.",
   },
+  //Features
   section2: {
     title: "All-in-One Digital Hub",
     description: "Everything you need to manage your digital presence",
@@ -61,13 +62,19 @@ export const data = {
       },
     ],
   },
+  //hook Feature
   section3: {
     title: "See Your CV Transform",
     description:
       "Watch how we convert your CV into a professional portfolio website",
     cards: [
       {
-        icon: TickIcon,
+        icon: UpdatingIcon,
+        title: "Easy Updates",
+        detail: "Update your portfolio anytime with just a few clicks",
+      },
+      {
+        icon: CustomizeIcon,
         title: "Instant Conversion",
         detail:
           "Upload your CV and get a beautifully designed portfolio website in seconds",
@@ -78,13 +85,9 @@ export const data = {
         detail:
           "Choose from multiple professional themes to match your style, and tweets in one centralized location",
       },
-      {
-        icon: UpdatingIcon,
-        title: "Easy Updates",
-        detail: "Update your portfolio anytime with just a few clicks",
-      },
     ],
   },
+  //Services
   section4: {
     title: "Professional Services",
     description: "Comprehensive solutions for your digital needs",
@@ -114,26 +117,27 @@ export const data = {
       },
     ],
   },
+  //Price
   section5: {
     title: "Simple, Transparent Pricing",
     description: "Choose the plan that works best for you",
     cards: [
       {
         planType: "Basic",
-        price: "$9",
+        price: "$5",
         services: [
+          "Link Storage",
+          "No customization",
           "Basic Portfolio Website",
-          "50 Link Storage",
-          "Email Support",
         ],
       },
       {
         planType: "Pro",
-        price: "$29",
+        price: "$25",
         services: [
-          "Advanced Portfolio Website",
-          "Unlimited Link Storage",
+          "Advanced Business Website",
           "Custom Development",
+          "2+ customizations",
           "Custom Domain",
         ],
       },
@@ -142,13 +146,15 @@ export const data = {
         price: "$99",
         services: [
           "Everything in Pro",
-          "Full Software Services",
+          "Deployment Services",
+          "Software Services",
           "Video Editing Services",
           "24/7 Dedicated Support",
         ],
       },
     ],
   },
+  //Testimonials
   section6: {
     title: "What Our Clients Say",
     description: "Trusted by professionals worldwide",
@@ -189,6 +195,7 @@ export const data = {
       },
     ],
   },
+  //FAQ
   section7: {
     title: "Frequently Asked Questions",
     description: "Everything you need to know about our services",
@@ -199,6 +206,7 @@ export const data = {
       },
     ],
   },
+  //social Handles
   section8: {
     title: "Connect With Us",
     phone: "",
@@ -210,6 +218,7 @@ export const data = {
       icon3: "",
     },
   },
+  //Footer
   section9: {
     title: "Wow",
     description:
@@ -242,6 +251,7 @@ export const data = {
       },
     ],
   },
+  //Policy
   section10: {
     title: "© 2024 LinkFolio. All rights reserved.",
     obj: ["Privacy Policy", "Terms of Service", "Cookie Policy"],

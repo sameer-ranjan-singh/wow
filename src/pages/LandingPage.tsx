@@ -10,7 +10,7 @@ import { ThemeProvider } from "../components/landingPage/theme/ThemeProvider";
 export const LandingPage = () => {
   return (
     <ThemeProvider>
-      <div className="flex flex-col bg-gray-100 scroll-smooth items-center">
+      <div className="flex flex-col bg-gray-100 items-center">
         {/* Header */}
         <Header />
 

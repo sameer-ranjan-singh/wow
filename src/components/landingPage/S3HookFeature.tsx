@@ -7,12 +7,12 @@ import beforeImage from "../../icons/BeforeImage.png";
 const S3HookFeature = () => {
   const { themeStyle } = useContext(ThemeContext);
   const portfolioFeature = data?.section3;
-  const [afterBox, setAfterBox] = useState(false);
+  const [showPortfolio, setShowPortfolio] = useState(false);
 
   return (
     <section
       id="portfolio"
-      className={`w-full ${themeStyle.hookFeature.bgGradient}`}
+      className={`w-full pt-10 ${themeStyle.hookFeature.bgGradient}`}
     >
       <div className="min-h-screen flex flex-col justify-center items-center py-10 mx-2 gap-10">
         <div className="">
@@ -22,63 +22,65 @@ const S3HookFeature = () => {
             {portfolioFeature.title}
           </h1>
           <h2
-            className={`text-sm md:text-lg  ${themeStyle.hookFeature.description} text-center font-sans`}
+            className={`text-sm md:text-lg mx-5  ${themeStyle.hookFeature.description} text-center font-sans`}
           >
             # {portfolioFeature.description}
           </h2>
         </div>
-        <div className=" m-2 p-4 gap-16 flex flex-col md:flex-row justify-center items-center">
-          <div className="w-full md:w-1/2 gap-5 flex flex-col items-center bg-neutral-700 bg-opacity-50 p-5 rounded-lg">
+        <div className="mx-4 gap-16 flex flex-col md:flex-row justify-center items-center">
+          <div className="md:w-full gap-5 flex flex-col items-center bg-neutral-700 bg-opacity-50 p-2 rounded-lg">
             <div className="flex w-full justify-center bg-neutral-600  rounded-lg p-1">
               <button
-                onClick={() => setAfterBox(!afterBox)}
+                onClick={() => setShowPortfolio(!showPortfolio)}
                 className={`${
-                  afterBox
+                  showPortfolio
                     ? `bg-neutral-600 text-blue-100`
                     : `text-indigo-100 bg-indigo-500`
-                } w-full flex justify-start md:justify-center items-center gap-2 px-4 py-3  font-mono rounded-lg`}
+                } w-full flex justify-start md:justify-center items-center gap-2 px-4 py-3  font-mono rounded-lg text-black`}
               >
                 Before
               </button>
               <button
-                onClick={() => setAfterBox(!afterBox)}
+                onClick={() => setShowPortfolio(!showPortfolio)}
                 className={`${
-                  afterBox
+                  showPortfolio
                     ? `text-indigo-100 bg-indigo-500`
                     : `bg-neutral-600 text-blue-100 animate-pulse`
-                } w-full flex justify-start md:justify-center items-center gap-2 px-4 py-3  font-mono rounded-lg`}
+                } w-full flex justify-start md:justify-center items-center gap-2 px-4 py-3 font-mono rounded-lg text-black`}
               >
                 After
               </button>
             </div>
-            <div className="max-h-80 overflow-y-auto w-full">
-              <div className="rounded-3xl ">
-                {afterBox ? (
+
+            <div className="max-h-96 overflow-y-auto w-80 md:w-full">
+              <div className="rounded-3xl w-full">
+                {showPortfolio ? (
                   <LandingPage />
                 ) : (
                   <img
-                    src={afterBox ? "" : beforeImage}
+                    src={showPortfolio ? "" : beforeImage}
                     alt="After"
-                    className="rounded-3xl"
+                    className="rounded-3xl "
                   />
                 )}
               </div>
             </div>
           </div>
-          <div className="md:w-1/2 flex flex-col justify-center p-4">
+
+          <div className="flex flex-col items-start ">
             {portfolioFeature.cards.map((folio) => (
-              <div className="flex gap-6 mb-4" key={folio.title}>
-                <div className="w-1/12 flex justify-start">
+              <div className="w-full flex mb-4 gap-2" key={folio.title}>
+                <div className="flex justify-start">
                   <folio.icon />
                 </div>
-                <div className="flex flex-col gap-2 mb-3">
+                <div className="flex flex-col items-start gap-1 mb-3">
                   <h3
                     className={`font-bold text-md ${themeStyle.hookFeature.title} text-xl`}
                   >
                     {folio.title}
                   </h3>
                   <h4
-                    className={`font-bold text-md ${themeStyle.hookFeature.description}`}
+                    className={`font-bold text-sm md:text-md ${themeStyle.hookFeature.description}`}
                   >
                     {folio.detail}
                   </h4>
