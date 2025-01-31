@@ -115,7 +115,7 @@ export const themeVariantStyles: Record<ThemeEnum, ThemeVariantProps> = {
       text_color_primary: "text-blue-600",
       text_color_secondary: "text-gray-600",
       bgSolid: "bg-white",
-      bgGradient: "bg-gradient-to-b from-white to-gray-100 bg-opacity-30",
+      bgGradient: "bg-gradient-to-b from-white to-gray-100 bg-opacity-30 shadow-lg rounded-b-2xl w-3/5 md:max-w-3xl",
       title: "text-neutral-800",
       btn: {
         bgSolid: "bg-blue-500 hover:bg-blue-700 ",
@@ -221,7 +221,7 @@ export const themeVariantStyles: Record<ThemeEnum, ThemeVariantProps> = {
       text_color_primary: "text-white",
       text_color_secondary: "text-gray-400",
       bgSolid: "bg-gray-900",
-      bgGradient: "m-4 rounded-full w-3/5 md:max-w-3xl bg-gradient-to-b from-gray-700 to-gray-900 shadow-lg",
+      bgGradient: "rounded-b-2xl w-3/5 md:max-w-3xl bg-gradient-to-b from-gray-700 to-gray-900 shadow-lg",
       title: "text-white",
       btn: {
         bgSolid: "bg-blue-500 hover:bg-blue-700",

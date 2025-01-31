@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { ThemeContext } from "../../theme/ThemeProvider";
+import { ThemeContext } from "./theme/ThemeProvider";
 import { data } from "./data";
 import ButtonLP from "./ButtonLP";
 import { RightArrowIcon } from "../../icons/RightArrowIcon";
-import { ThemeIcon } from "../../theme/ThemeIcon";
+import { ThemeIcon } from "./theme/ThemeIcon";
 
 const S1Intro = () => {
   const { themeStyle } = useContext(ThemeContext);

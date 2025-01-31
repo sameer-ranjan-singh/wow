@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ThemeContext } from "../../theme/ThemeProvider";
+import { ThemeContext } from "./theme/ThemeProvider";
 
 export interface FeatureCard {
     title: String;

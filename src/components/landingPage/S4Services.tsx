@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ThemeContext } from "../../theme/ThemeProvider";
+import { ThemeContext } from "./theme/ThemeProvider";
 import { data } from "./data";
 import { CheckIcon } from "../../icons/CheckIcon";
 import { useNavigate } from "react-router-dom";

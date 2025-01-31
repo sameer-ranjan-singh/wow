@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
-import { ThemeContext } from "../../theme/ThemeProvider";
+import { ThemeContext } from "./theme/ThemeProvider";
 import ButtonLP from "./ButtonLP";
 
-export const linkToObj = [
+const linkToObj = [
   { href: "intro", label: "Home" },
   { href: "features", label: "Features" },
   { href: "portfolio", label: "Portfolio" },
@@ -19,7 +19,7 @@ const Header = () => {
   return (
     <header
       id="header"
-      className={`z-20 h-14 opacity-90 py-2 px-4 md:px-10 flex md:justify-around justify-between items-center fixed w-full ${themeStyle.header.bgGradient} `}
+      className={`z-20 h-14 opacity-90 py-2 px-4 md:px-10 flex md:justify-around justify-between items-center fixed ${themeStyle.header.bgGradient} `}
     >
       <h1
         className={`font-extrabold font-sans text-xl ${themeStyle.header.title}`}
