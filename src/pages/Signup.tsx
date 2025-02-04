@@ -6,6 +6,7 @@ import { BACKEND_URL } from "../config";
 import Logo from "../icons/Logo.png";
 import { useNavigate } from "react-router-dom";
 import { useRedirect } from "../hooks/useRedirect";
+import { z, ZodIssue } from "zod";
 
 const switchPage = {
   signup: {
@@ -22,34 +23,61 @@ const switchPage = {
   },
 };
 
+export const UserZodSchema = z.object({
+  name: z.string().min(3).max(20),
+  email: z.string().email().min(10).max(40),
+  password: z.string().min(3).max(20),
+});
+
+interface ZError {
+  status: boolean;
+  msg: ZodIssue[];
+}
+
 export const Signup = () => {
-  useRedirect()
+  useRedirect();
+  const navigate = useNavigate();
   const [login, setToLogin] = useState(false);
+
   const nameRef = useRef<HTMLInputElement>();
-  // const usernameRef = useRef<HTMLInputElement>();
   const emailRef = useRef<HTMLInputElement>();
   const passwordRef = useRef<HTMLInputElement>();
 
-  const navigate = useNavigate()
+  // const emailRefLogin = useRef<HTMLInputElement>();
+  // const passwordRefLogin = useRef<HTMLInputElement>();
+  const [parsedError, setParsedError] = useState<ZError>({
+    status: false,
+    msg: [],
+  });
 
   const createAccount = async () => {
     const name = nameRef.current?.value;
-    // const username = usernameRef.current?.value;
     const email = emailRef.current?.value;
     const password = passwordRef.current?.value;
+    const parsedUser = UserZodSchema.safeParse({ name, email, password });
+
+    if (!parsedUser.success) {
+      // console.log(parsedUser.error.errors)
+      return setParsedError({ status: true, msg: parsedUser.error.errors });
+    }
 
     await axios.post(`${BACKEND_URL}/api/v1/user/signup`, {
       name,
-      // username,
       email,
       password,
     });
-    navigate("/dashboard")
+    navigate("/dashboard");
   };
 
   const loginToAccount = async () => {
     const email = emailRef.current?.value;
     const password = passwordRef.current?.value;
+    const parsedUser = UserZodSchema.safeParse({ email, password });
+
+    if (!parsedUser.success) {
+      // console.log(parsedUser.error.errors)
+      return setParsedError({ status: true, msg: parsedUser.error.errors });
+    }
 
     const response = await axios.post(`${BACKEND_URL}/api/v1/user/signin`, {
       email,
@@ -57,8 +85,7 @@ export const Signup = () => {
     });
     const jwtToken = response.data.token;
     localStorage.setItem("token", jwtToken);
-    navigate("/dashboard")
-
+    navigate("/dashboard");
   };
 
   return (
@@ -84,30 +111,60 @@ export const Signup = () => {
                 type="text"
                 reference={emailRef}
               />
+              {parsedError?.msg?.some((error) => error.path[0] === "email") && (
+                <p className="text-red-500 text-xs md:text-sm -mt-2">
+                  - Invalid Email
+                </p>
+              )}
               <Input
                 placeholder="Password"
                 type="password"
                 reference={passwordRef}
               />
+              {parsedError?.msg?.map(
+                (error) =>
+                  error.path[0] === "password" && (
+                    <p className="text-red-500 text-xs md:text-sm -mt-2">
+                      - Password must be greater that 3* digits
+                    </p>
+                  )
+              )}
             </>
           ) : (
             <>
               <Input placeholder="Full Name" type="text" reference={nameRef} />
-              {/* <Input
-                placeholder="Add a username"
-                type="text"
-                reference={usernameRef}
-              /> */}
+              {parsedError?.msg?.map(
+                (error) =>
+                  error.path[0] === "name" && (
+                    <p className="text-red-500 text-xs md:text-sm -mt-2">
+                      - Name must be greater that 3* digits
+                    </p>
+                  )
+              )}
+
               <Input
                 placeholder="Email or Mobile Number"
                 type="text"
                 reference={emailRef}
               />
+              {parsedError?.msg?.some((error) => error.path[0] === "email") && (
+                <p className="text-red-500 text-xs md:text-sm -mt-2">
+                  - Invalid Email
+                </p>
+              )}
               <Input
                 placeholder="Password"
                 type="password"
                 reference={passwordRef}
               />
+              {parsedError?.msg?.map(
+                (error) =>
+                  error.path[0] === "password" && (
+                    <p className="text-red-500 text-xs md:text-sm -mt-2">
+                      - Password must be greater that 3* digits
+                    </p>
+                  )
+              )}
             </>
           )}
         </div>
