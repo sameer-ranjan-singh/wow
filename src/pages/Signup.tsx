@@ -57,16 +57,20 @@ export const Signup = () => {
     const parsedUser = UserZodSchema.safeParse({ name, email, password });
 
     if (!parsedUser.success) {
-      // console.log(parsedUser.error.errors)
       return setParsedError({ status: true, msg: parsedUser.error.errors });
     }
-
-    await axios.post(`${BACKEND_URL}/api/v1/user/signup`, {
-      name,
-      email,
-      password,
-    });
-    navigate("/dashboard");
+    try {
+      const response = await axios.post(`${BACKEND_URL}/api/v1/user/signup`, {
+        name,
+        email,
+        password,
+      });
+      const data = response.data;
+      localStorage.setItem("token", data?.token);
+      navigate("/dashboard");
+    } catch (error) {
+      console.log(error, "Failed to create account");
+    }
   };
 
   const loginToAccount = async () => {
@@ -76,16 +80,22 @@ export const Signup = () => {
 
     if (!parsedUser.success) {
       // console.log(parsedUser.error.errors)
-      return setParsedError({ status: true, msg: parsedUser.error.errors });
+      setParsedError({ status: true, msg: parsedUser.error.errors });
     }
 
-    const response = await axios.post(`${BACKEND_URL}/api/v1/user/signin`, {
-      email,
-      password,
-    });
-    const jwtToken = response.data.token;
-    localStorage.setItem("token", jwtToken);
-    navigate("/dashboard");
+    console.log("adadadaddadadad");
+    try {
+      const response = await axios.post(`${BACKEND_URL}/api/v1/user/signin`, {
+        email,
+        password,
+      });
+      const jwtToken = response.data.token;
+      console.log(jwtToken)
+      localStorage.setItem("token", jwtToken);
+      navigate("/dashboard");
+    } catch (error) {
+      console.log(error, "Failed to Login");
+    }
   };
 
   return (

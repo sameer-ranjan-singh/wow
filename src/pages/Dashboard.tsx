@@ -7,11 +7,11 @@ export const DashboardLayout = () => {
   useRedirect();
 
   return (
-    <div className="flex justify-between relative">
-      <div className="hidden md:block fixed md:w-60">
+    <div className="flex relative">
+      <div className="hidden md:block fixed md:w-64">
         <SiedeBar />
       </div>
-      <div className="h-screen w-full flex flex-col md:ml-60">
+      <div className="w-full min-h-screen flex flex-col md:ml-[256px]">
         <Navbar />
         <Outlet />
       </div>
