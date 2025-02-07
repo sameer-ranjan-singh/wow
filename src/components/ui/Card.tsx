@@ -32,7 +32,7 @@ export const Card = ({
 }: CardProp) => {
   const deleteCard = async () => {
     await axios.put(
-      `${BACKEND_URL}/api/v1/user/content`,
+      `${BACKEND_URL}/api/v1/user/disableContent`,
       {
         disableCard: true,
         contentId: _id,
@@ -44,7 +44,7 @@ export const Card = ({
   };
   const restoreCard = async () => {
     await axios.put(
-      `${BACKEND_URL}/api/v1/user/content`,
+      `${BACKEND_URL}/api/v1/user/disableContent`,
       {
         disableCard: false,
         contentId: _id,
@@ -58,7 +58,7 @@ export const Card = ({
   const shareCard = async () => {};
   const addToFav = async () => {
     await axios.put(
-      `${BACKEND_URL}/api/v1/user/content`,
+      `${BACKEND_URL}/api/v1/user/favContent`,
       {
         contentId: _id,
         favourite: !favourite, //check !favourite
