@@ -28,13 +28,10 @@ export const SideItem = () => {
     <nav>
       <ul className=" flex flex-col justify-center items-center w-full">
         {navItmes.map((item) => (
-          <li
-            key={item.iconLabel}
-            className="flex justify-start hover:bg-gray"
-          >
+          <li key={item.iconLabel} className="flex justify-start hover:bg-gray">
             <Link
               to={item.href}
-              className=" text-gray-700 w-48 gap-4 hover:bg-gray-200  hover:text-slate-500 hover:font-bold border-b flex justify-center items-center p-2 py-3"
+              className="hover:rounded-lg text-gray-700 w-48 gap-4 hover:bg-gray-200 hover:text-slate-500 hover:font-bold border-b flex justify-center items-center p-2 py-1"
             >
               <span className="w-2/12 flex justify-start items-center h-12 ">
                 {item.icon}

@@ -1,24 +1,32 @@
 import { Card } from "../components/ui/Card";
 import { ContentNotFound } from "../components/ui/ContentNotFound";
 import { MainHeader } from "../components/ui/MainHeader";
+import { TagBar } from "../components/ui/TagBar";
 import {
   ContentLiveOrDeleted,
   ContentProps,
   useContent,
 } from "../hooks/useContent";
+import { filterContentByPage } from "../utils/filterPageContent";
 
-export const Trash = () => {
+export const Doc = () => {
   const contents: ContentLiveOrDeleted = useContent();
-  const disabledContent = contents.disabledData;
+  const filteredContent = filterContentByPage({
+    contents,
+    pageName: "Doc",
+  });
 
   return (
-    <div className="w-full h-screen pb-20 bg-black">
+    <div className="w-full h-screen pb-20 bg-gradient-to-br from-lime-300 to-lime-600">
       <div className="m-8">
-        <MainHeader title="Favs" contentType="Fav" />
+        <MainHeader title="Docs" contentType="Doc" />
+      </div>
+      <div className="m-8 flex justify-start items-center">
+        <TagBar contents={filteredContent} type="Docs" />
       </div>
       <div className="w-full gap-5 pb-20 mx-auto flex flex-wrap justify-center items-center">
-        {disabledContent.length != 0 ? (
-          disabledContent.map((content: ContentProps) => (
+        {filteredContent.length != 0 ? (
+          filteredContent.map((content: ContentProps) => (
             <Card
               key={Math.floor(Math.random() * 100)}
               _id={content._id}

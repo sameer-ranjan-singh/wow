@@ -7,6 +7,7 @@ import Logo from "../icons/Logo.png";
 import { useNavigate } from "react-router-dom";
 import { useRedirect } from "../hooks/useRedirect";
 import { z, ZodIssue } from "zod";
+import { LoadingIcon } from "../icons/LoadingIcon";
 
 const switchPage = {
   signup: {
@@ -38,6 +39,7 @@ export const Signup = () => {
   useRedirect();
   const navigate = useNavigate();
   const [login, setToLogin] = useState(false);
+  const [isloading, setlaoding] = useState(false)
 
   const nameRef = useRef<HTMLInputElement>();
   const emailRef = useRef<HTMLInputElement>();
@@ -51,6 +53,7 @@ export const Signup = () => {
   });
 
   const createAccount = async () => {
+    setlaoding(true)
     const name = nameRef.current?.value;
     const email = emailRef.current?.value;
     const password = passwordRef.current?.value;
@@ -67,6 +70,7 @@ export const Signup = () => {
       });
       const data = response.data;
       localStorage.setItem("token", data?.token);
+      setlaoding(true)
       navigate("/dashboard");
     } catch (error) {
       console.log(error, "Failed to create account");
@@ -74,6 +78,7 @@ export const Signup = () => {
   };
 
   const loginToAccount = async () => {
+    setlaoding(true)
     const email = emailRef.current?.value;
     const password = passwordRef.current?.value;
     const parsedUser = UserZodSchema.safeParse({ email, password });
@@ -92,6 +97,8 @@ export const Signup = () => {
       const jwtToken = response.data.token;
       console.log(jwtToken)
       localStorage.setItem("token", jwtToken);
+      setlaoding(false)
+
       navigate("/dashboard");
     } catch (error) {
       console.log(error, "Failed to Login");
@@ -183,6 +190,8 @@ export const Signup = () => {
             text={login ? switchPage.login.btn : switchPage.signup.btn}
             variant="primary"
             size="md"
+            loading={isloading}
+            loadIcon={<LoadingIcon size="md"/>}
             onClick={login ? loginToAccount : createAccount}
           />
         </div>

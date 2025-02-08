@@ -19,7 +19,7 @@ export const QuickAccess = () => {
       <div className="text-md md:text-2xl font-bold">Quick Access</div>
       <div className="w-full flex flex-wrap justify-between gap-4">
         {accessObject.map((obj) => (
-          <Link to={obj.href} className="flex justify-center items-center border border-gray-200 rounded-lg shadow-sm px-2 min-w-full md:min-w-80 hover:bg-gray-200">
+          <Link key={obj.label} to={obj.href} className="flex justify-center items-center border border-gray-200 rounded-lg shadow-sm px-2 min-w-full md:min-w-80 hover:bg-gray-200">
             <div className="flex justify-center items-center rounded-full bg-blue-100 p-2 size-8 animate-spin">{obj.icon}</div>
             <div className="flex flex-wrap flex-col md:flex-row md:justify-between items-center w-full p-4 rounded-sm">
               <h1 className="text-sm md:text-md font-bold">{obj.label}</h1>

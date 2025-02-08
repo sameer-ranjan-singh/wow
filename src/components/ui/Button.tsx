@@ -15,8 +15,8 @@ export interface ButtonProps {
 
 // Recommended : use maps or records over here
 const variantStyles: Record<Variants, string> = {
-  primary: "bg-gradient-to-b from-blue-500 to-blue-600 text-white  hover:text-white hover:bg-blue-700 ",
-  secondary: "bg-blue-100 text-blue-500 hover:bg-blue-200  ",
+  primary: "bg-gradient-to-b from-neutral-600 to-neutral-700 text-white  hover:text-white hover:bg-neutral-700 ",
+  secondary: "bg-neutral-700 text-neutral-700 hover:bg-neutral-700  ",
 };
 
 const sizeStyles: Record<sizeVariants, string> = {
@@ -25,7 +25,7 @@ const sizeStyles: Record<sizeVariants, string> = {
   lg: "text-lg font-semibold py-2 px-4",
 };
 
-const defaultStyles = "flex justify-center items-center gap-2 shadow-sm w-full rounded-md";
+const defaultStyles = "flex justify-center items-center gap-2 shadow-sm w-full rounded-md text-white";
 
 export const Button = (props: ButtonProps) => {
   return (

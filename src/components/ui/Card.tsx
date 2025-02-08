@@ -17,7 +17,7 @@ const cardTheme: Record<cardThemeTypes, string> = {
 };
 
 const cardDefaultStyles =
-  "max-w-72 rounded-md shadow-md p-2 m-2 font-semibold border border-slate-200 flex flex-col justify-between";
+  "max-w-72 rounded-md shadow-md p-6 font-semibold border border-slate-200 flex flex-col justify-between";
 
 export const Card = ({
   _id,
@@ -25,7 +25,7 @@ export const Card = ({
   type,
   title,
   link,
-  // tags,
+  tags,
   favourite,
   disableCard,
   createdAt,
@@ -61,7 +61,7 @@ export const Card = ({
       `${BACKEND_URL}/api/v1/user/favContent`,
       {
         contentId: _id,
-        favourite: !favourite, //check !favourite
+        fav: !favourite, //check !favourite
       },
       {
         headers: { Authorization: localStorage.getItem("token") },
@@ -75,7 +75,7 @@ export const Card = ({
         <div>
           <div className="flex justify-between items-center gap-2">
             <div className="flex items-center">
-              <h1 className="w-full bg-white rounded-md p-2 pb-0 border border-l-gray-500 border-l-4 shadow-sm">
+              <h1 className="w-full bg-white rounded-md p-2 border border-l-gray-500 border-l-4 shadow-sm">
                 {title}
               </h1>
             </div>
@@ -122,18 +122,15 @@ export const Card = ({
                 <a href={link.replace("x.com", "twitter.com")}>
                   December 7, 2023
                 </a>
-                {/* <a href="https://twitter.com/SpaceX/status/1732824684683784516?ref_src=twsrc%5Etfw">December 7, 2023</a> */}
               </blockquote>
             )}
           </div>
           <div className="pt-3">
             <ul className="flex gap-2">
               <li className="px-2 py-1 bg-green-100 text-green-500 rounded-3xl text-xs">
-                #productivity
+                {tags}
               </li>
-              <li className="px-2 py-1 bg-green-100 text-green-500 rounded-3xl text-xs">
-                #ideas
-              </li>
+              
             </ul>
           </div>
         </div>
@@ -149,3 +146,38 @@ export const Card = ({
     </>
   );
 };
+
+/**
+ *           <div className="pt-4">
+            {type == "Youtube" && (
+              <iframe
+                className="w-full "
+                src={link as string}
+                // src={link.replace("watch","embed").replace("?v=","/")}
+                title="The ₹1 Crore Salary Race: Engineering vs Finance vs Startup"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
+            )}
+            {type === "Twitter" && (
+              <blockquote className="twitter-tweet">
+                <p lang="en" dir="ltr">
+                  At dawn from the gateway to Mars, the launch of Starship’s
+                  second flight test
+                  <a href="https://t.co/ffKnsVKwG4">
+                    pic.twitter.com/ffKnsVKwG4
+                  </a>
+                </p>
+                &mdash; SpaceX (@SpaceX)
+                <a href={link.replace("x.com", "twitter.com")}>
+                  December 7, 2023
+                </a>
+                <a href="https://twitter.com/SpaceX/status/1732824684683784516?ref_src=twsrc%5Etfw">December 7, 2023</a>
+                </blockquote>
+              )}
+            </div>
+ * 
+ * 
+ */

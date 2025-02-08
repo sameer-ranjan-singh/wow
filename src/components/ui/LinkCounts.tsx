@@ -17,7 +17,7 @@ export const LinkCounts = () => {
   return (
     <div className="flex justify-center items-center flex-wrap gap-4 w-full">
     {linkCount.map((link)=> (
-        <div className={`${link.bg} flex flex-col gap-2 justify-center items-center p-4 h-36 rounded-lg bg-white w-36 md:min-w-72`}>
+        <div key={link.label} className={`${link.bg} flex flex-col gap-2 justify-center items-center p-4 h-36 rounded-lg bg-white w-36 md:min-w-72`}>
             <h1 className="text-sm md:text-md text-gray-300 font-semibold">{link.label}</h1>
             <h1 className="text-2xl font-extrabold">{link.count}</h1>
         </div>
