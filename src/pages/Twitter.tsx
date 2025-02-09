@@ -17,7 +17,7 @@ export const Twitter = () => {
   });
 
   return (
-    <div className="w-full h-screen  bg-black ">
+    <div className="w-full h-screen bg-black ">
       <div className="m-8">
         <MainHeader title="Twitter" contentType="Twitter" />
       </div>

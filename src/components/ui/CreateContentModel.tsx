@@ -39,7 +39,7 @@ export const CreateContentModel = ({
         type,
         title,
         link,
-        tags,
+        tags, //Todo : implemet logic to add multiple tags
         favourite: false,
         disableCard: false,
         createdAt: todaysDate(),
@@ -66,15 +66,15 @@ export const CreateContentModel = ({
                   <CloseIcon size="lg" />
                 </div>
                 <div className="flex flex-col gap-2 my-4">
+                  <div className="">
+                    <SelectContentType reference={typeRef} />
+                  </div>
                   <Input placeholder="Title" type="text" reference={titleRef} />
                   <Input
                     placeholder="Paste your Link"
                     type="text"
                     reference={linkRef}
                   />
-                  <div className="">
-                    <SelectContentType reference={typeRef} />
-                  </div>
                   {/* <Input placeholder="Tags" type="text" reference={tagRef}/> */}
                 </div>
               </div>

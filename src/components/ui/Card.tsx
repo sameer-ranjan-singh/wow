@@ -34,7 +34,7 @@ export const Card = ({
     await axios.put(
       `${BACKEND_URL}/api/v1/user/disableContent`,
       {
-        disableCard: true,
+        disable: true,
         contentId: _id,
       },
       {

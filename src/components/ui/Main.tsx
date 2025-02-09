@@ -9,8 +9,8 @@ export const Main = () => {
         {/* <div className="relative flex justify-center items-center h-screen">
           <BackgroundLogo />
         </div> */}
-        <div className="h-screen mx-8 flex flex-col items-center py-8 gap-8">
-          <MainHeader title="Overview"/>
+        <div className=" mx-8 flex flex-col items-center pt-8 pb-20 gap-8">
+          <MainHeader title="Dashboard"/>
           <LinkCounts />
           <QuickAccess />
         </div>
