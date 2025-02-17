@@ -22,7 +22,7 @@ export const ThemeContext = createContext<ThemeContextProps>({
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [showTheme, setShowTheme] = useState<true | false>(false);
   const [themeName, setThemeName] = useState<ThemeEnum>(ThemeEnum.LIGHT);
-  const [themeStyle, setThemeStyle] = useState<ThemeVariantProps>(themeVariantStyles.wow);
+  const [themeStyle, setThemeStyle] = useState<ThemeVariantProps>(themeVariantStyles.light);
 
   const toggleTheme = (theme: ThemeEnum) => {
     setThemeName(theme);

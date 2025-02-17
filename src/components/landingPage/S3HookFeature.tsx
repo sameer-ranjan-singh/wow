@@ -27,8 +27,8 @@ const S3HookFeature = () => {
             # {portfolioFeature.description}
           </h2>
         </div>
-        <div className="mx-4 gap-16 flex flex-col md:flex-row justify-center items-center">
-          <div className="md:w-full gap-5 flex flex-col items-center bg-neutral-700 bg-opacity-50 p-2 rounded-lg">
+        <div className="mx-4 gap-16 flex flex-col justify-center items-center">
+          <div className="w-5/6 gap-5 flex flex-col items-center bg-neutral-700 bg-opacity-50 p-2 rounded-lg">
             <div className="flex w-full justify-center bg-neutral-600  rounded-lg p-1">
               <button
                 onClick={() => setShowPortfolio(!showPortfolio)}
