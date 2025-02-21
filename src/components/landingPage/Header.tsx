@@ -45,13 +45,12 @@ const Header = () => {
       <div
         className={`${themeStyle.header.text_color_primary} flex justify-center items-center gap-4 `}
       >
-        {/* <ThemeIcon /> */}
         <ButtonLP
           bgVariant="bgPrimary"
           textVariant="textPrimary"
           borderVariant="borderPrimary"
           textValue="Start Free"
-          pad={`px-2 py-1 rounded-full md:rounded-md`}
+          pad={`px-2 py-1 rounded-full `}
         />
       </div>
     </header>

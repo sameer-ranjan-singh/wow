@@ -1,5 +1,5 @@
 import { Card } from "../components/ui/Card";
-import { ContentNotFound } from "../components/ui/ContentNotFound";
+import { todaysDate } from "../components/ui/CreateContentModel";
 import { MainHeader } from "../components/ui/MainHeader";
 import { TagBar } from "../components/ui/TagBar";
 import {
@@ -9,6 +9,34 @@ import {
 } from "../hooks/useContent";
 import { filterContentByPage } from "../utils/filterPageContent";
 
+const defaultCards = [
+  {
+    key: Math.floor(Math.random() * 100),
+    _id: `${Math.floor(Math.random() * 100)}`,
+    theme: "light",
+    type: "Twitter",
+    title: "Naval on AI",
+    link: "https://x.com/naval/status/1880837571405816159",
+    tags: "",
+    favourite: false,
+    disableCard: false,
+    createdAt: todaysDate(),
+    updatedAt: todaysDate(),
+  },
+  {
+    key: Math.floor(Math.random() * 100),
+    _id: `${Math.floor(Math.random() * 100)}`,
+    theme: "light",
+    type: "Twitter",
+    title: "Building Gather.City",
+    link: "https://x.com/samXyyzz/status/1892176517628600433",
+    tags: "",
+    favourite: false,
+    disableCard: false,
+    createdAt: todaysDate(),
+    updatedAt: todaysDate(),
+  },
+];
 export const Twitter = () => {
   const contents: ContentLiveOrDeleted = useContent();
   const filteredContent = filterContentByPage({
@@ -42,7 +70,24 @@ export const Twitter = () => {
             />
           ))
         ) : (
-          <ContentNotFound />
+          <>
+            {filteredContent.length == 0 &&
+              defaultCards.map((content) => (
+                <Card
+                  key={Math.floor(Math.random() * 100)}
+                  _id={content._id as String}
+                  theme="light"
+                  type={content.type}
+                  title={content.title}
+                  link={content.link}
+                  tags={content.tags}
+                  favourite={content.favourite}
+                  disableCard={content.disableCard}
+                  createdAt={content.createdAt}
+                  updatedAt={content.updatedAt}
+                />
+              ))}
+          </>
         )}
       </div>
     </div>

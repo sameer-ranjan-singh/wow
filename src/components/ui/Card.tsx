@@ -100,10 +100,9 @@ export const Card = ({
             {type == "Youtube" && (
               <iframe
                 className="w-full "
-                src={link as string}
-                // src={link.replace("watch","embed").replace("?v=","/")}
+                // src={link as string}
+                src={link.replace("watch", "embed").replace("?v=", "/")}
                 title="The ₹1 Crore Salary Race: Engineering vs Finance vs Startup"
-                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
@@ -111,17 +110,7 @@ export const Card = ({
             )}
             {type === "Twitter" && (
               <blockquote className="twitter-tweet">
-                <p lang="en" dir="ltr">
-                  At dawn from the gateway to Mars, the launch of Starship’s
-                  second flight test
-                  <a href="https://t.co/ffKnsVKwG4">
-                    pic.twitter.com/ffKnsVKwG4
-                  </a>
-                </p>
-                &mdash; SpaceX (@SpaceX)
-                <a href={link.replace("x.com", "twitter.com")}>
-                  December 7, 2023
-                </a>
+                <a href={link.replace("x.com", "twitter.com")}/>
               </blockquote>
             )}
           </div>
@@ -130,7 +119,6 @@ export const Card = ({
               <li className="px-2 py-1 bg-green-100 text-green-500 rounded-3xl text-xs">
                 {tags}
               </li>
-              
             </ul>
           </div>
         </div>

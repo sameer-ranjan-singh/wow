@@ -60,6 +60,7 @@ export const Signup = () => {
     const parsedUser = UserZodSchema.safeParse({ name, email, password });
 
     if (!parsedUser.success) {
+      setlaoding(false)
       return setParsedError({ status: true, msg: parsedUser.error.errors });
     }
     try {
@@ -73,6 +74,7 @@ export const Signup = () => {
       setlaoding(true)
       navigate("/dashboard");
     } catch (error) {
+      setlaoding(false)
       console.log(error, "Failed to create account");
     }
   };
@@ -85,6 +87,7 @@ export const Signup = () => {
 
     if (!parsedUser.success) {
       // console.log(parsedUser.error.errors)
+      setlaoding(false)
       setParsedError({ status: true, msg: parsedUser.error.errors });
     }
 
@@ -101,6 +104,7 @@ export const Signup = () => {
 
       navigate("/dashboard");
     } catch (error) {
+      setlaoding(false)
       console.log(error, "Failed to Login");
     }
   };

@@ -11,6 +11,13 @@ export interface CreateContentModelProps {
   onClose: () => void;
 }
 
+export const todaysDate = () => {
+  const date = new Date();
+  const currentDate =
+    date.getDate() + "/" + date.getMonth() + 1 + "/" + date.getFullYear();
+  return currentDate;
+};
+
 export const CreateContentModel = ({
   open,
   onClose,
@@ -20,12 +27,6 @@ export const CreateContentModel = ({
   const tagRef = useRef<HTMLInputElement>();
   const typeRef = useRef<HTMLInputElement>();
 
-  const todaysDate = () => {
-    const date = new Date();
-    const currentDate =
-      date.getDate() + "/" + date.getMonth() + 1 + "/" + date.getFullYear();
-    return currentDate;
-  };
 
   const addContent = async () => {
     const type = typeRef?.current?.textContent;

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ThemeContext } from "./theme/ThemeProvider";
 import { data } from "./data";
 import ButtonLP from "./ButtonLP";
@@ -6,17 +6,24 @@ import { RightArrowIcon } from "../../icons/RightArrowIcon";
 import { ThemeIcon } from "./theme/ThemeIcon";
 
 const S1Intro = () => {
-  const { themeStyle } = useContext(ThemeContext);
+  const { themeStyle, setShowTheme } = useContext(ThemeContext);
+
   const intro = data?.section1;
 
+  useEffect(() => {
+    setShowTheme(true);
+    setTimeout(() => {
+      setShowTheme(false);
+    }, 1000);
+  },[]);
   return (
     <section
       id="intro"
       className={`pt-20 w-full ${themeStyle.intro.bgGradient}`}
     >
-    <div className="fixed top-16 right-3 md:right-14">
-      <ThemeIcon />
-    </div>
+      <div className="fixed top-16 right-3 md:right-14">
+        <ThemeIcon />
+      </div>
       <div className="min-h-screen flex flex-wrap justify-center items-center m-2 gap-4">
         <div className="w-full md:w-2/6 md:mx-0 flex flex-col justify-center">
           <h1
